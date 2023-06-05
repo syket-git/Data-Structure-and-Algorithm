@@ -2,6 +2,14 @@
 #include <vector>
 using namespace std;
 
+char toLowerCase(char c){
+  if(c >= 'a' && c <= 'z'){
+    return c;
+  }else {
+    return c - 'A' + 'a';
+  }
+}
+
 int getLength(char a[]) {
   int count = 0;
   for (int i = 0; a[i] != '\0'; i++) {
@@ -26,7 +34,7 @@ bool checkPalindromes(char name[], int len) {
 
   while (start <= end) {
 
-    if (name[start] != name[end]) {
+    if ( toLowerCase(name[start]) != toLowerCase(name[end])) {
       return false;
     } else {
       start++;
